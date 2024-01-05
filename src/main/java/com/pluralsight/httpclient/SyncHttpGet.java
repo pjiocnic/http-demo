@@ -1,4 +1,4 @@
-package pluralsight;
+package com.pluralsight.httpclient;
 
 /*
  * src by by Benjamin Muschko: https://learning.oreilly.com/scenarios/java-11-network/9781492081234/
@@ -11,7 +11,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-public class SyncHttp {
+public class SyncHttpGet {
     public static void main(String[] args) {
         HttpClient httpClient = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))

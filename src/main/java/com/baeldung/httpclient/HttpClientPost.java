@@ -10,6 +10,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -101,12 +102,32 @@ public class HttpClientPost {
 		
 		HttpClient client = HttpClient.newHttpClient();
 
+//		<dependency>
+//	    <groupId>com.fasterxml.jackson.core</groupId>
+//	    <artifactId>jackson-databind</artifactId>
+//	    <version>2.13.0</version> <!-- Use the latest version -->
+//    </dependency>
+		
+		 // Convert the custom object to a JSON string
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        String jsonBody = objectMapper.writeValueAsString(customObject);
+//		HttpRequest request = HttpRequest.newBuilder()
+//				 .uri(URI.create(serviceUrl))
+//				 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+//				 .build();
+
 		HttpRequest request = HttpRequest.newBuilder()
 										 .uri(URI.create(serviceUrl))
+										 .timeout(Duration.ofSeconds(10))
 										 .POST(HttpRequest.BodyPublishers.ofString("{\"action\":\"hello\"}"))
 										 .build();
 
 		HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+		
+//      To convert to an custom object
+//	    ObjectMapper objectMapper = new ObjectMapper();
+//	    YourCustomObject yourCustomObject = objectMapper.readValue(response.body(), YourCustomObject.class);
+
 
 		return response;
 	}

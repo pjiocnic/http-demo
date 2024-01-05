@@ -1,4 +1,4 @@
-package pluralsight;
+package com.pluralsight.httpclient;
 
 /*
  * src: https://learning.oreilly.com/scenarios/java-11-functional/9781492081333/

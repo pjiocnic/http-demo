@@ -1,4 +1,4 @@
-package pluralsight;
+package com.pluralsight.httpclient;
 
 /*
  * Convert a Collection into an Array

@@ -1,4 +1,4 @@
-package pluralsight;
+package com.pluralsight.httpclient;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
